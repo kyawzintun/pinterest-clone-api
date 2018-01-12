@@ -12,7 +12,7 @@ async function createImage(req, res) {
 
     try {
       const newImageSaved = await newImage.save();
-      res.status(200).json(imageObj);
+      res.status(200).json(newImage);
     } catch (error) {
       res.status(500).send('Internal server error.');
     }
@@ -21,7 +21,22 @@ async function createImage(req, res) {
   }
 }
 
+async function getImage(req, res) {
+  let image;
+  if (req.params.userId){
+    image = await Image.find({"userID": req.params.userId}, { updatedAt: 0, createdAt: 0, _v: 0 }).sort('-createdAt').exec();    
+  }else {
+    image = await Image.find({}, { updatedAt: 0, createdAt: 0, _v: 0 } ).sort('-createdAt').exec();
+  }
+  try {
+    res.status(200).json(image);
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
 
 module.exports = {
-  createImage
+  createImage,
+  getImage
 };

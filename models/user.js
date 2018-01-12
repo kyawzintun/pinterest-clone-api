@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   email: { type: String, max: 50 },
+  picture: {},
   name: { type:String,max: 50 },
   id: { type: String, required: true, max: 50 },
 }, { timestamps: true });
