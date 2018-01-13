@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const dbURI = "mongodb://kyawzintun:test@ds247077.mlab.com:47077/kzt-pinterest-clone";
+const dbURI = "mongodb://<your-mongodb-url>";
 
 function connect() {
   mongoose.connect(dbURI, { useMongoClient: true })
