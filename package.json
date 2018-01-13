@@ -2,8 +2,16 @@
   "name": "pinterest-clone-api",
   "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyawzintun/pinterest-clone-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kyawzintun/pinterest-clone-api/issues"
+  },
+  "homepage": "https://github.com/kyawzintun/pinterest-clone-api#readme",
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "npm ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
